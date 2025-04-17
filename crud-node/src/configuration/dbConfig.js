@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/crud_db",{
+mongoose.connect("mongodb+srv://vinayakhulyal6143:d0Wp6nhBDO1wPvRW@crud_db.rrd01xh.mongodb.net/",{
 })
 
 mongoose.connection.on("connected",()=>{
