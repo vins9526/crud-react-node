@@ -7,7 +7,7 @@ const Dashboard = () => {
 
     const fetchUsers = async()=>{
         try{
-            const response =await fetch("http://localhost:5000/api/user");
+            const response =await fetch("http://13.49.145.211:5000/api/user");
             const data = await response.json();
             console.log("Fetched users:", data); // Debugging
             setUser(data);
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     const handleDelete = async (userId) =>{
         try{
-            const response =await fetch(`http://localhost:5000/api/user/${userId}`,{
+            const response =await fetch(`http://13.49.145.211:5000/api/user/${userId}`,{
                 method :"DELETE"
             });
             console.log("Delete respose :",response);
