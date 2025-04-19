@@ -14,10 +14,9 @@ const PostUser = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response =await fetch("http://13.49.145.211:5000/api/user",{
+            const response =await fetch("http://56.228.29.3:5000/api/user",{
                 method :"POST",
-                headers:{
-                    "Content-Type":"application/json",
+                headers:{"Content-Type":"application/json",
                 },
                 body:JSON.stringify(formData)
             })

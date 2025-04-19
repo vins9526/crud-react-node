@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     const handleDelete = async (userId) =>{
         try{
-            const response =await fetch(`http://13.49.145.211:5000/api/user/${userId}`,{
+            const response =await fetch(`http://56.228.29.3:5000/api/user/${userId}`,{
                 method :"DELETE"
             });
             console.log("Delete respose :",response);
@@ -70,7 +70,7 @@ const Dashboard = () => {
                                             <Button 
                                                 variant="danger"
                                                 onClick={()=>handleDelete(user._id)}
-                                            >
+                                                >
                                                 Delete
                                             </Button>
                                         </td>
