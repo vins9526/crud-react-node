@@ -7,7 +7,7 @@ const Dashboard = () => {
 
     const fetchUsers = async()=>{
         try{
-            const response =await fetch("http://13.49.145.211:5000/api/user");
+            const response =await fetch("http://56.228.29.3:5000/api/user");
             const data = await response.json();
             console.log("Fetched users:", data); // Debugging
             setUser(data);
