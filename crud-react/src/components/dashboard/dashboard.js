@@ -1,13 +1,16 @@
 import { useState , useEffect }     from "react";
 import { Button, Container, Row ,Col ,Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+const apiUrl = process.env.REACT_APP_API_URL;
+
+
 const Dashboard = () => {
     const [user , setUser] = useState([]);
     const navigate = useNavigate();
 
     const fetchUsers = async()=>{
         try{
-            const response =await fetch("http://56.228.29.3:5000/api/user");
+            const response =await fetch(`${apiUrl}/api/user`);
             const data = await response.json();
             console.log("Fetched users:", data); // Debugging
             setUser(data);
@@ -27,7 +30,7 @@ const Dashboard = () => {
 
     const handleDelete = async (userId) =>{
         try{
-            const response =await fetch(`http://56.228.29.3:5000/api/user/${userId}`,{
+            const response =await fetch(`${apiUrl}/api/user/${userId}`,{
                 method :"DELETE"
             });
             console.log("Delete respose :",response);
