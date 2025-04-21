@@ -3,7 +3,6 @@ import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./postUser.css"
 
-const apiUrl =process.env.React_APP_API_URl;
 
 const PostUser = () => {
     const [formData ,setFormData] = useState({
@@ -16,7 +15,7 @@ const PostUser = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response =await fetch(`${apiUrl}:5000/api/user`,{
+            const response =await fetch(`${process.env.REACT_APP_API_URL}/api/user`,{
                 method :"POST",
                 headers:{"Content-Type":"application/json",
                 },

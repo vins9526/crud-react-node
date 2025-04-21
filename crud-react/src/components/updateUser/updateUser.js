@@ -4,7 +4,6 @@ import React,{useState ,useEffect} from "react";
 import "./updateUser.css";
 import { useNavigate } from "react-router-dom";
 
-const apiUrl = process.env.REACT_APP_API_URL;
 
 const UpdateUser = () => {
     const {id} = useParams();
@@ -19,7 +18,7 @@ const UpdateUser = () => {
     useEffect(()=>{
         const fetchUser =async()=>{
             try{
-                const response =await fetch(`${apiUrl}/api/user/${id}`);
+                const response =await fetch(`${process.env.REACT_APP_API_URL}/api/user/${id}`);
                 console.log("Fetch user response status:", response.status); // Debugging
                 const data = await response.json();
                 setFormData(data);
@@ -41,7 +40,7 @@ const UpdateUser = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            const response =await fetch(`${apiUrl}/api/user/${id}`,{
+            const response =await fetch(`${process.env.REACT_APP_API_URL}/api/user/${id}`,{
                 method :"PATCH",
                 headers:{
                     "Content-Type":"application/json",

@@ -1,7 +1,6 @@
 import { useState , useEffect }     from "react";
 import { Button, Container, Row ,Col ,Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-const apiUrl = process.env.REACT_APP_API_URL;
 
 
 const Dashboard = () => {
@@ -10,12 +9,14 @@ const Dashboard = () => {
 
     const fetchUsers = async()=>{
         try{
-            const response =await fetch(`${apiUrl}/api/user`);
+            console.log("API URL:", process.env.REACT_APP_API_URL);
+            const response =await fetch(`${process.env.REACT_APP_API_URL}/api/user`);
             const data = await response.json();
             console.log("Fetched users:", data); // Debugging
             setUser(data);
         }catch(error){
             console.error("Error while fetching users", error.message);
+            
         }
     }
 
@@ -30,7 +31,7 @@ const Dashboard = () => {
 
     const handleDelete = async (userId) =>{
         try{
-            const response =await fetch(`${apiUrl}/api/user/${userId}`,{
+            const response =await fetch(`${process.env.REACT_APP_API_URL}/api/user/${userId}`,{
                 method :"DELETE"
             });
             console.log("Delete respose :",response);
