@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://vinayakhulyal6143:d0Wp6nhBDO1wPvRW@crud_db.rrd01xh.mongodb.net",{
+mongoose.connect("mongodb+srv://vinshulyal:jqMKqApajZYbI7Nj@crudb.f8yvmgx.mongodb.net/",{
 })
 
 mongoose.connection.on("connected",()=>{
