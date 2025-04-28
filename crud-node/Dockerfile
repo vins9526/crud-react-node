@@ -1,4 +1,4 @@
-FROM node:18.9.1
+FROM node:20
 
 WORKDIR /app
 
@@ -13,3 +13,4 @@ EXPOSE 5000
 CMD ["npm", "start"]
 
 
+RUN npm run build
